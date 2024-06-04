@@ -15,8 +15,6 @@ const backend = defineBackend({
 
 const myFirstFunctionLambda = backend.myFirstFunction.resources.lambda;
 
-
-
 myFirstFunctionLambda.addToRolePolicy(new iam.PolicyStatement({
   actions:  ["ses:*"],
   resources: ['*'],
