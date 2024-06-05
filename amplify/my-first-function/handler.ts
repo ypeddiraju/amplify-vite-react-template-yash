@@ -1,7 +1,7 @@
 import { Handler } from "aws-cdk-lib/aws-lambda";
 
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-const ses = new SESClient({ region: "ap-south-1" });
+const ses = new SESClient({ region: "us-east-1" });
 
 
 export const handler: Handler = async(event: any,context : any,callback: any) => {

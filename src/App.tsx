@@ -29,17 +29,17 @@ function App() {
 
   function handleSubmit(event: { preventDefault: () => void; }) {
     event.preventDefault();
-    //document.getElementById("demo").innerHTML = bodyValue;
+    
     const format = {
       queryStringParameters: {
         body: bodyValue,
-        toMail: toMailValue,
+        tomail: toMailValue,
         subject: subjectValue,
       },
     };
 
     let url =
-      "https://cmisth8zzc.execute-api.ap-south-1.amazonaws.com/test1/everytimeusingnode";
+      "https://dttv6w8p03.execute-api.us-east-1.amazonaws.com/test1/everytimemailnode";
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
