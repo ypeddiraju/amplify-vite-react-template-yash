@@ -7,7 +7,7 @@ const ses = new SESClient({ region: "us-east-1" });
 export const handler: Handler = async(event: any,context : any,callback: any) => {
   const body = event.queryStringParameters.body;
   const subject = event.queryStringParameters.subject;
-  const toMail: string = event.queryStringParameters.toMail;
+  const toMail: string = event.queryStringParameters.tomail;
   
   //console.log(body);
   

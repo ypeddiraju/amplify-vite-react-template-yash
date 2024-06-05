@@ -7,7 +7,7 @@ import * as ses from "aws-cdk-lib/aws-ses"
 import { Rule, Schedule } from 'aws-cdk-lib/aws-events';
 import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
 
-
+import { Construct } from 'constructs';
 
 const backend=defineBackend({
   auth,
@@ -23,15 +23,7 @@ myFirstFunctionLambda.addToRolePolicy(new iam.PolicyStatement({
   effect: iam.Effect.ALLOW,
 }));
 
-const rule = new Rule( this,'Rule', {
-  schedule: Schedule.cron({
-    minute: '*/5',
-  }),
-});
 
-
-// 👇 Defining our Lambda function as the target for our CloudWatch Event Rule
-rule.addTarget(new LambdaFunction(myFirstFunctionLambda));
 
 
 
